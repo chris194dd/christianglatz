@@ -204,22 +204,28 @@
   .chip:hover{border-color:var(--brass); color:var(--brass); background:transparent;}
 
   .proof-quote{
-    margin-top:48px; padding:36px 40px 30px; max-width:760px;
+    margin-top:48px; padding:36px 40px 32px; max-width:760px;
     border-left:2px solid var(--brass); background:var(--paper-soft);
     position:relative;
   }
-  .pq-mark{
-    font-family:var(--serif); font-size:3.4rem; color:var(--brass-soft);
-    line-height:1; margin-bottom:-12px;
+  .pq-label{
+    font-family:var(--mono); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--brass); margin-bottom:18px;
   }
-  .proof-quote p{
-    font-family:var(--serif); font-size:1.18rem; font-weight:400; line-height:1.5;
-    color:var(--ink); font-style:italic;
+  .pq-list{
+    list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:12px 28px;
+  }
+  .pq-list li{
+    position:relative; padding-left:20px; font-size:0.96rem; line-height:1.5; color:var(--ink);
+  }
+  .pq-list li::before{
+    content:'✓'; position:absolute; left:0; top:0; color:var(--brass); font-size:0.85rem; font-weight:600;
   }
   .pq-attr{
-    display:block; margin-top:16px; font-family:var(--mono); font-size:0.78rem;
+    display:block; margin-top:22px; font-family:var(--mono); font-size:0.78rem;
     color:var(--slate); letter-spacing:0.01em;
   }
+  @media (max-width:640px){ .pq-list{grid-template-columns:1fr;} }
 
   /* ---------- WERDEGANG TIMELINE ---------- */
   .timeline{position:relative; margin-top:10px;}
@@ -262,8 +268,19 @@
   .project-card .eyebrow{color:var(--brass-soft);}
   .project-card .eyebrow::before{background:var(--brass-soft);}
   .project-card h3{
-    font-family:var(--serif); font-weight:500; font-size:1.7rem; margin-bottom:16px; max-width:600px;
+    font-family:var(--serif); font-weight:500; font-size:1.7rem; margin-bottom:30px; max-width:600px;
   }
+  .init-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:30px 40px;
+  }
+  @media (max-width:720px){ .init-grid{grid-template-columns:1fr;} }
+  .init-item{ border-top:1px solid var(--line-dark); padding-top:16px; }
+  .init-title{
+    font-family:var(--serif); font-weight:500; font-size:1.08rem; color:var(--brass-soft);
+    margin-bottom:8px;
+  }
+  .init-item p{ color:var(--mist); line-height:1.55; font-size:0.93rem; }
+  .init-item .project-tags{ margin-top:14px; }
   .project-card p{color:var(--mist); line-height:1.65; max-width:620px; font-size:1rem;}
   .project-tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;}
   .project-tags span{
@@ -335,7 +352,7 @@
     <div class="nav-right">
       <nav class="nav-links">
         <a href="#werdegang" data-i18n="nav1">Werdegang</a>
-        <a href="#projekt" data-i18n="nav2">Projekt</a>
+        <a href="#projekt" data-i18n="nav2">Eigeninitiative</a>
         <a href="#profil" data-i18n="nav3">Profil</a>
         <a href="#kontakt" data-i18n="nav4">Kontakt</a>
       </nav>
@@ -350,11 +367,11 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="hero-eyebrow" data-i18n="heroEyebrow">Business Development &amp; Digital Strategy</div>
+      <div class="hero-eyebrow" data-i18n="heroEyebrow">Sales · Business Development &amp; Digital Strategy</div>
       <h1>Christian Glatz</h1>
       <div class="role" data-i18n="heroRole">Senior Business Development Manager</div>
       <p class="lede" data-i18n="heroLede">Über 20 Jahre Erfahrung im Aufbau neuer Geschäftsfelder, der Gewinnung strategischer Kunden und der erfolgreichen Umsetzung komplexer Digitalprojekte – von der ersten Idee bis zum unterschriebenen Vertrag.</p>
-      <div class="target-line" data-i18n="targetLine">Nächste Station: <b>Head of Business Development</b> · <b>Sales Director</b> · <b>Account Director</b> · <b>Senior BD Manager</b> im digitalen B2B-Umfeld</div>
+      <div class="target-line" data-i18n="targetLine">Nächste Station: <b>Head of Business Development</b> · <b>Sales Director</b> · <b>Account Director</b> · <b>Senior BD Manager</b> · <b>Geschäftsführung</b> · <b>Head of Marketing</b></div>
       <div class="hero-cta">
         <a class="btn btn-primary" href="mailto:christian.glatz@web.de" data-i18n="ctaMail">E-Mail schreiben</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/christianglatz/" target="_blank" rel="noopener" data-i18n="ctaLinkedin">LinkedIn-Profil</a>
@@ -413,9 +430,16 @@
     </div>
 
     <div class="proof-quote reveal">
-      <div class="pq-mark">&rdquo;</div>
-      <p data-i18n="pqText">Mein aktueller Arbeitgeber beschreibt mich in meinem Zwischenzeugnis als jemanden, der komplexe Situationen schnell erfasst, auch bei hoher Arbeitsbelastung strukturiert und ruhig bleibt und durchgehend zuverlässig liefert.</p>
-      <span class="pq-attr" data-i18n="pqAttr">— aus meinem Zwischenzeugnis, adesso SE, 2024 (sinngemäß)</span>
+      <div class="pq-label" data-i18n="pqLabel">Stärken aus meinem Zwischenzeugnis</div>
+      <ul class="pq-list">
+        <li data-i18n="pq1">Erfasst komplexe Sachverhalte zügig und behält auch in herausfordernden Situationen den Überblick</li>
+        <li data-i18n="pq2">Geht Aufgaben mit hoher Eigenmotivation und sichtbarem Engagement an</li>
+        <li data-i18n="pq3">Bleibt auch bei hohem Arbeitspensum strukturiert und belastbar</li>
+        <li data-i18n="pq4">Arbeitet selbstständig, gründlich und mit klarem Plan</li>
+        <li data-i18n="pq5">Liefert durchweg verlässliche Ergebnisse</li>
+        <li data-i18n="pq6">Trägt aktiv zu guter Zusammenarbeit und Teamatmosphäre bei</li>
+      </ul>
+      <span class="pq-attr" data-i18n="pqAttr">— sinngemäß aus meinem Zwischenzeugnis, adesso SE, 2024</span>
     </div>
   </div>
 </section>
@@ -505,15 +529,31 @@
       <h2 data-i18n="prTitle">Auch praktisch in der Umsetzung</h2>
     </div>
     <div class="project-card reveal">
-      <div class="eyebrow" data-i18n="prCardEyebrow">Privates Software-Projekt</div>
-      <h3 data-i18n="prCardTitle">Konzeption und Eigenentwicklung einer Web-Applikation</h3>
-      <p data-i18n="prCardText">Neben der beruflichen Praxis entwickle ich eigene Software-Projekte – zuletzt eine vollständige Web-Applikation mit Echtzeit-Datenbankanbindung, Standort- und Wetter-API-Integration sowie Mehrnutzer-Funktionalität. Ein Beleg für praktisches Verständnis von User Experience, Datenintegration und moderner Webtechnologie – nicht nur in der Theorie, sondern selbst umgesetzt.</p>
-      <div class="project-tags">
-        <span data-i18n="pt1">Progressive Web App</span>
-        <span data-i18n="pt2">Echtzeit-Synchronisation</span>
-        <span data-i18n="pt3">API-Integrationen</span>
-        <span data-i18n="pt4">Responsive UX/UI</span>
-        <span data-i18n="pt5">Datenvisualisierung</span>
+      <div class="eyebrow" data-i18n="prCardEyebrow">Neben dem Tagesgeschäft</div>
+      <h3 data-i18n="prCardTitle">Eigeninitiative, die über die Stellenbeschreibung hinausgeht</h3>
+
+      <div class="init-grid">
+        <div class="init-item">
+          <div class="init-title" data-i18n="ini1Title">Web-Applikationen</div>
+          <p data-i18n="ini1Text">Konzeption und Eigenentwicklung verschiedener Web-Applikationen – u. a. mit Echtzeit-Datenbankanbindung, API-Integrationen und Mehrnutzer-Funktionalität.</p>
+          <div class="project-tags">
+            <span data-i18n="pt1">Progressive Web App</span>
+            <span data-i18n="pt2">Echtzeit-Synchronisation</span>
+            <span data-i18n="pt3">API-Integrationen</span>
+          </div>
+        </div>
+        <div class="init-item">
+          <div class="init-title" data-i18n="ini2Title">Bild- &amp; Videoproduktion</div>
+          <p data-i18n="ini2Text">Erstellung von Bild- und Videomaterial zur kommerziellen Nutzung.</p>
+        </div>
+        <div class="init-item">
+          <div class="init-title" data-i18n="ini3Title">Netzwerk &amp; Engagement</div>
+          <p data-i18n="ini3Text">Aktives Engagement in business-relevanten Initiativen und auf Netzwerkveranstaltungen.</p>
+        </div>
+        <div class="init-item">
+          <div class="init-title" data-i18n="ini4Title">Ausgezeichneter Marken-Relaunch</div>
+          <p data-i18n="ini4Text">Projektverantwortung für den Marken-Relaunch „PIGMENTPOL" (2012) – ausgezeichnet von Marketing Dresden.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -592,14 +632,20 @@
 <script>
   const translations = {
     de: {
-      nav1:"Werdegang", nav2:"Projekt", nav3:"Profil", nav4:"Kontakt",
-      heroEyebrow:"Business Development & Digital Strategy",
+      nav1:"Werdegang", nav2:"Eigeninitiative", nav3:"Profil", nav4:"Kontakt",
+      heroEyebrow:"Sales · Business Development & Digital Strategy",
       heroRole:"Senior Business Development Manager",
       heroLede:"Über 20 Jahre Erfahrung im Aufbau neuer Geschäftsfelder, der Gewinnung strategischer Kunden und der erfolgreichen Umsetzung komplexer Digitalprojekte – von der ersten Idee bis zum unterschriebenen Vertrag.",
       ctaMail:"E-Mail schreiben", ctaLinkedin:"LinkedIn-Profil", ctaCV:"Lebenslauf (PDF)",
-      targetLine:'Nächste Station: <b>Head of Business Development</b> · <b>Sales Director</b> · <b>Account Director</b> · <b>Senior BD Manager</b> im digitalen B2B-Umfeld',
-      pqText:"Mein aktueller Arbeitgeber beschreibt mich in meinem Zwischenzeugnis als jemanden, der komplexe Situationen schnell erfasst, auch bei hoher Arbeitsbelastung strukturiert und ruhig bleibt und durchgehend zuverlässig liefert.",
-      pqAttr:"— aus meinem Zwischenzeugnis, adesso SE, 2024 (sinngemäß)",
+      targetLine:'Nächste Station: <b>Head of Business Development</b> · <b>Sales Director</b> · <b>Account Director</b> · <b>Senior BD Manager</b> · <b>Geschäftsführung</b> · <b>Head of Marketing</b>',
+      pqLabel:"Stärken aus meinem Zwischenzeugnis",
+      pq1:"Erfasst komplexe Sachverhalte zügig und behält auch in herausfordernden Situationen den Überblick",
+      pq2:"Geht Aufgaben mit hoher Eigenmotivation und sichtbarem Engagement an",
+      pq3:"Bleibt auch bei hohem Arbeitspensum strukturiert und belastbar",
+      pq4:"Arbeitet selbstständig, gründlich und mit klarem Plan",
+      pq5:"Liefert durchweg verlässliche Ergebnisse",
+      pq6:"Trägt aktiv zu guter Zusammenarbeit und Teamatmosphäre bei",
+      pqAttr:"— sinngemäß aus meinem Zwischenzeugnis, adesso SE, 2024",
       proof1:"Jahre Erfahrung", proof2:"Umsatzverantwortung", proof3:"Stationen mit wachsender Verantwortung", proof4:"Sprachen",
       kompEyebrow:"Kernkompetenzen", kompTitle:"Worauf ich mich verlasse",
       kompText:"Eine Mischung aus Vertriebsstärke, strategischem Denken und digitalem Verständnis – entwickelt über zwei Jahrzehnte in unterschiedlichen Branchen und Unternehmensgrößen.",
@@ -633,9 +679,16 @@
       t5b2:"Aufbau und Pflege eines CRM-Systems",
       t5b3:"Betreuung der Unternehmenswebsite",
       prEyebrow:"Eigeninitiative", prTitle:"Auch praktisch in der Umsetzung",
-      prCardEyebrow:"Privates Software-Projekt",
-      prCardTitle:"Konzeption und Eigenentwicklung einer Web-Applikation",
-      prCardText:"Neben der beruflichen Praxis entwickle ich eigene Software-Projekte – zuletzt eine vollständige Web-Applikation mit Echtzeit-Datenbankanbindung, Standort- und Wetter-API-Integration sowie Mehrnutzer-Funktionalität. Ein Beleg für praktisches Verständnis von User Experience, Datenintegration und moderner Webtechnologie – nicht nur in der Theorie, sondern selbst umgesetzt.",
+      prCardEyebrow:"Neben dem Tagesgeschäft",
+      prCardTitle:"Eigeninitiative, die über die Stellenbeschreibung hinausgeht",
+      ini1Title:"Web-Applikationen",
+      ini1Text:"Konzeption und Eigenentwicklung verschiedener Web-Applikationen – u. a. mit Echtzeit-Datenbankanbindung, API-Integrationen und Mehrnutzer-Funktionalität.",
+      ini2Title:"Bild- & Videoproduktion",
+      ini2Text:"Erstellung von Bild- und Videomaterial zur kommerziellen Nutzung.",
+      ini3Title:"Netzwerk & Engagement",
+      ini3Text:"Aktives Engagement in business-relevanten Initiativen und auf Netzwerkveranstaltungen.",
+      ini4Title:"Ausgezeichneter Marken-Relaunch",
+      ini4Text:"Projektverantwortung für den Marken-Relaunch „PIGMENTPOL\" (2012) – ausgezeichnet von Marketing Dresden.",
       pt1:"Progressive Web App", pt2:"Echtzeit-Synchronisation", pt3:"API-Integrationen", pt4:"Responsive UX/UI", pt5:"Datenvisualisierung",
       eduTitle:"Ausbildung",
       edu1name:"Staatl. geprüfter Kommunikationswirt",
@@ -647,14 +700,20 @@
       footerNote:"Verfügbar für neue Herausforderungen"
     },
     en: {
-      nav1:"Experience", nav2:"Project", nav3:"Profile", nav4:"Contact",
-      heroEyebrow:"Business Development & Digital Strategy",
+      nav1:"Experience", nav2:"Initiative", nav3:"Profile", nav4:"Contact",
+      heroEyebrow:"Sales · Business Development & Digital Strategy",
       heroRole:"Senior Business Development Manager",
       heroLede:"More than 20 years of experience building new business areas, winning strategic accounts and delivering complex digital projects — from the first idea to the signed contract.",
       ctaMail:"Send an email", ctaLinkedin:"LinkedIn profile", ctaCV:"Resume (PDF)",
-      targetLine:'Next step: <b>Head of Business Development</b> · <b>Sales Director</b> · <b>Account Director</b> · <b>Senior BD Manager</b> in the digital B2B space',
-      pqText:"My current employer's reference letter describes me as someone who grasps complex situations quickly, stays structured and calm under heavy workload, and consistently delivers reliable results.",
-      pqAttr:"— from my reference letter, adesso SE, 2024 (paraphrased)",
+      targetLine:'Next step: <b>Head of Business Development</b> · <b>Sales Director</b> · <b>Account Director</b> · <b>Senior BD Manager</b> · <b>Managing Director</b> · <b>Head of Marketing</b>',
+      pqLabel:"Strengths from my reference letter",
+      pq1:"Grasps complex matters quickly and stays on top of challenging situations",
+      pq2:"Approaches tasks with strong self-motivation and visible commitment",
+      pq3:"Stays structured and resilient even under heavy workload",
+      pq4:"Works independently, thoroughly and with a clear plan",
+      pq5:"Consistently delivers reliable results",
+      pq6:"Actively contributes to good teamwork and team spirit",
+      pqAttr:"— paraphrased from my reference letter, adesso SE, 2024",
       proof1:"Years of Experience", proof2:"Revenue Responsibility", proof3:"Career Stations of Growing Responsibility", proof4:"Languages",
       kompEyebrow:"Core Competencies", kompTitle:"What I bring to the table",
       kompText:"A blend of sales strength, strategic thinking and digital fluency — built over two decades across industries and company sizes.",
@@ -688,9 +747,16 @@
       t5b2:"Built and maintained a CRM system",
       t5b3:"Managed the company website",
       prEyebrow:"Personal Initiative", prTitle:"Hands-on in practice, too",
-      prCardEyebrow:"Personal Software Project",
-      prCardTitle:"Concept and independent development of a web application",
-      prCardText:"Alongside my professional work, I build my own software projects — most recently a full web application with real-time database sync, location and weather API integration, and multi-user functionality. Practical proof of understanding user experience, data integration and modern web technology — not just in theory, but built by hand.",
+      prCardEyebrow:"Beyond the day job",
+      prCardTitle:"Initiative that goes beyond the job description",
+      ini1Title:"Web Applications",
+      ini1Text:"Concept and independent development of several web applications — including real-time database sync, API integrations and multi-user functionality.",
+      ini2Title:"Photo & Video Production",
+      ini2Text:"Producing photo and video material for commercial use.",
+      ini3Title:"Network & Engagement",
+      ini3Text:"Active involvement in business-relevant initiatives and networking events.",
+      ini4Title:"Award-Winning Brand Relaunch",
+      ini4Text:"Project lead for the \"PIGMENTPOL\" brand relaunch (2012) — recognized with an award from Marketing Dresden.",
       pt1:"Progressive Web App", pt2:"Real-Time Sync", pt3:"API Integrations", pt4:"Responsive UX/UI", pt5:"Data Visualization",
       eduTitle:"Education",
       edu1name:"Certified Communications Specialist",
