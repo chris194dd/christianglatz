@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Christian Glatz — Business Development &amp; Digital Strategy</title>
+<meta name="description" content="Senior Business Development Manager mit über 20 Jahren Erfahrung in Vertrieb, Marketing und Geschäftsentwicklung im B2B-Umfeld.">
+<!-- Open Graph / LinkedIn -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Christian Glatz — Business Development & Digital Strategy">
+<meta property="og:description" content="Senior Business Development Manager · Head of BD · Sales Director · Head of Marketing. 20+ Jahre Erfahrung im B2B-Umfeld. Jetzt vernetzen auf LinkedIn.">
+<meta property="og:url" content="https://christianglatz.github.io/">
+<meta property="og:image" content="https://christianglatz.github.io/og-preview.jpg">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Christian Glatz — Business Development & Digital Strategy">
+<meta name="twitter:description" content="Senior Business Development Manager · 20+ Jahre Erfahrung im B2B-Umfeld.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -288,7 +299,54 @@
     border:1px solid var(--line-dark); color:var(--brass-soft); border-radius:2px;
   }
 
-  /* ---------- AUSBILDUNG / TOOLS / SPRACHEN ---------- */
+  .btn-linkedin{
+    background:#0A66C2; color:#fff; display:inline-flex; align-items:center; gap:10px;
+    padding:15px 28px; border-radius:2px; font-size:0.95rem; font-weight:700;
+    letter-spacing:0.01em; transition:all .2s; border:none; cursor:pointer;
+    text-decoration:none;
+  }
+  .btn-linkedin:hover{background:#004182; transform:translateY(-1px); box-shadow:0 6px 24px rgba(10,102,194,0.35);}
+  .btn-linkedin svg{flex-shrink:0;}
+
+  /* ---------- CONNECT BLOCK ---------- */
+  .connect-block{
+    background:var(--ink); color:var(--paper);
+    padding:80px 0;
+  }
+  .connect-inner{
+    display:flex; align-items:center; justify-content:space-between; gap:48px; flex-wrap:wrap;
+  }
+  .connect-text h2{
+    font-family:var(--serif); font-weight:500; font-size:clamp(1.8rem,3vw,2.6rem);
+    line-height:1.1; max-width:520px;
+  }
+  .connect-text h2 .brass{color:var(--brass);}
+  .connect-text p{
+    color:var(--mist); font-size:1rem; line-height:1.6; margin-top:14px; max-width:480px;
+  }
+  .connect-card{
+    background:rgba(255,255,255,0.05); border:1px solid var(--line-dark);
+    border-radius:4px; padding:32px 36px; min-width:280px; flex-shrink:0;
+    display:flex; flex-direction:column; align-items:center; gap:18px; text-align:center;
+  }
+  .connect-avatar{
+    width:80px; height:80px; border-radius:50%; overflow:hidden;
+    border:2px solid var(--brass); flex-shrink:0;
+  }
+  .connect-avatar img{width:100%; height:100%; object-fit:cover; filter:grayscale(1);}
+  .connect-name{font-family:var(--serif); font-size:1.15rem; font-weight:500;}
+  .connect-handle{font-family:var(--mono); font-size:0.78rem; color:var(--mist); letter-spacing:0.04em;}
+  .connect-stats{
+    display:flex; gap:24px; font-size:0.82rem; color:var(--mist);
+    border-top:1px solid var(--line-dark); padding-top:14px; width:100%;
+    justify-content:center;
+  }
+  .connect-stat strong{display:block; color:var(--paper); font-family:var(--mono); font-size:0.9rem;}
+
+  @media (max-width:800px){
+    .connect-inner{flex-direction:column; align-items:flex-start;}
+    .connect-card{width:100%;}
+  }
   .grid-3{display:grid; grid-template-columns:1fr 1.3fr 0.8fr; gap:56px;}
   @media (max-width:900px){ .grid-3{grid-template-columns:1fr;} }
   .col-title{
@@ -373,8 +431,11 @@
       <p class="lede" data-i18n="heroLede">Über 20 Jahre Erfahrung im Aufbau neuer Geschäftsfelder, der Gewinnung strategischer Kunden und der erfolgreichen Umsetzung komplexer Digitalprojekte – von der ersten Idee bis zum unterschriebenen Vertrag.</p>
       <div class="target-line" data-i18n="targetLine">Nächste Station: <b>Head of Business Development</b> · <b>Sales Director</b> · <b>Account Director</b> · <b>Senior BD Manager</b> · <b>Geschäftsführung</b> · <b>Head of Marketing</b></div>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="mailto:christian.glatz@web.de" data-i18n="ctaMail">E-Mail schreiben</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/christianglatz/" target="_blank" rel="noopener" data-i18n="ctaLinkedin">LinkedIn-Profil</a>
+        <a class="btn-linkedin" href="https://www.linkedin.com/in/christianglatz/" target="_blank" rel="noopener" data-i18n="ctaLinkedin">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span data-i18n="ctaLinkedin">Auf LinkedIn vernetzen</span>
+        </a>
+        <a class="btn btn-ghost" href="mailto:christian.glatz@web.de" data-i18n="ctaMail">E-Mail schreiben</a>
         <a class="btn btn-ghost" href="Christian_Glatz_Lebenslauf.pdf" target="_blank" rel="noopener" data-i18n="ctaCV">Lebenslauf (PDF)</a>
       </div>
     </div>
@@ -427,6 +488,8 @@
       <span class="chip" data-i18n="k8">Stakeholder Management</span>
       <span class="chip" data-i18n="k9">Teamführung</span>
       <span class="chip" data-i18n="k10">Marktanalyse</span>
+      <span class="chip" data-i18n="k11">Partnermanagement</span>
+      <span class="chip" data-i18n="k11">Partnermanagement</span>
     </div>
 
     <div class="proof-quote reveal">
@@ -522,6 +585,44 @@
   </div>
 </section>
 
+<section class="connect-block">
+  <div class="wrap">
+    <div class="connect-inner reveal">
+      <div class="connect-text">
+        <h2 data-i18n="connectH2">Lassen Sie uns <span class="brass">vernetzen.</span></h2>
+        <p data-i18n="connectP">Ich bin offen für herausfordernde Gespräche – ob über neue Projekte, Rollen oder einfach einen fachlichen Austausch. Der schnellste Weg zu mir führt über LinkedIn.</p>
+        <a class="btn-linkedin" href="https://www.linkedin.com/in/christianglatz/" target="_blank" rel="noopener" style="margin-top:28px; display:inline-flex;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span data-i18n="ctaLinkedinConnect">Jetzt auf LinkedIn vernetzen</span>
+        </a>
+      </div>
+      <div class="connect-card">
+        <div class="connect-avatar">
+          <img src="data:image/jpeg;base64,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" alt="Christian Glatz">
+        </div>
+        <div>
+          <div class="connect-name">Christian Glatz</div>
+          <div class="connect-handle">@christianglatz</div>
+        </div>
+        <div class="connect-stats">
+          <div class="connect-stat">
+            <strong>20+</strong>
+            <span data-i18n="statYears">Jahre Erfahrung</span>
+          </div>
+          <div class="connect-stat">
+            <strong>B2B</strong>
+            <span data-i18n="statFocus">Fokus</span>
+          </div>
+          <div class="connect-stat">
+            <strong>DE/EN</strong>
+            <span data-i18n="statLang">Sprachen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="projekt">
   <div class="wrap">
     <div class="section-head reveal">
@@ -589,6 +690,9 @@
           <span>Jira</span><span>Kameleoon</span><span>Contentsquare</span><span>Dynamic Yield</span>
           <span>Talkwalker</span><span>Facelift</span><span>Sistrix</span><span>Screaming Frog</span>
           <span>Jentis</span><span>OneTrust</span><span>TYPO3</span><span>WordPress</span><span>ADVANTER</span><span>Power BI</span>
+          <span>Claude</span><span>ChatGPT</span><span>Microsoft Copilot</span><span>Power Automate</span>
+          <span>FileMaker</span><span>Miro</span><span>Figma</span><span>Adobe Creative Suite</span><span>Kanban</span>
+          <span>contentbird</span><span>Dynamatrix</span><span>SAS</span>
         </div>
       </div>
 
@@ -614,12 +718,17 @@
 <footer id="kontakt">
   <div class="wrap">
     <div class="footer-top">
-      <h2 data-i18n="footerH2">Lassen Sie uns über Ihr <span class="brass">nächstes Projekt</span> sprechen.</h2>
+      <div>
+        <h2 data-i18n="footerH2">Bereit, den nächsten<br><span class="brass">Schritt zu machen?</span></h2>
+        <p style="color:var(--mist); margin-top:16px; max-width:420px; line-height:1.6; font-size:0.97rem;" data-i18n="footerSub">Ich freue mich über interessante Gespräche – ob zu neuen Rollen, Projekten oder fachlichem Austausch. Am schnellsten erreichen Sie mich auf LinkedIn.</p>
+      </div>
       <div class="footer-actions">
-        <a class="btn btn-primary" href="mailto:christian.glatz@web.de" data-i18n="ctaMail">E-Mail schreiben</a>
-        <div class="contact-line">📍 Dresden, Deutschland</div>
+        <a class="btn-linkedin" href="https://www.linkedin.com/in/christianglatz/" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span data-i18n="ctaLinkedinConnect">Auf LinkedIn vernetzen</span>
+        </a>
+        <div class="contact-line" style="margin-top:8px;">📍 Dresden, Deutschland</div>
         <div class="contact-line">✉️ <a href="mailto:christian.glatz@web.de">christian.glatz@web.de</a></div>
-        <div class="contact-line">in <a href="https://www.linkedin.com/in/christianglatz/" target="_blank" rel="noopener">linkedin.com/in/christianglatz</a></div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -636,7 +745,12 @@
       heroEyebrow:"Sales · Business Development & Digital Strategy",
       heroRole:"Senior Business Development Manager",
       heroLede:"Über 20 Jahre Erfahrung im Aufbau neuer Geschäftsfelder, der Gewinnung strategischer Kunden und der erfolgreichen Umsetzung komplexer Digitalprojekte – von der ersten Idee bis zum unterschriebenen Vertrag.",
-      ctaMail:"E-Mail schreiben", ctaLinkedin:"LinkedIn-Profil", ctaCV:"Lebenslauf (PDF)",
+      ctaMail:"E-Mail schreiben", ctaLinkedin:"Auf LinkedIn vernetzen", ctaCV:"Lebenslauf (PDF)",
+      ctaLinkedinConnect:"Auf LinkedIn vernetzen",
+      connectH2:'Lassen Sie uns <span class="brass">vernetzen.</span>',
+      connectP:"Ich bin offen für herausfordernde Gespräche – ob über neue Projekte, Rollen oder einfach einen fachlichen Austausch. Der schnellste Weg zu mir führt über LinkedIn.",
+      statYears:"Jahre Erfahrung", statFocus:"Fokus", statLang:"Sprachen",
+      footerSub:"Ich freue mich über interessante Gespräche – ob zu neuen Rollen, Projekten oder fachlichem Austausch. Am schnellsten erreichen Sie mich auf LinkedIn.",
       targetLine:'Nächste Station: <b>Head of Business Development</b> · <b>Sales Director</b> · <b>Account Director</b> · <b>Senior BD Manager</b> · <b>Geschäftsführung</b> · <b>Head of Marketing</b>',
       pqLabel:"Stärken aus meinem Zwischenzeugnis",
       pq1:"Erfasst komplexe Sachverhalte zügig und behält auch in herausfordernden Situationen den Überblick",
@@ -651,7 +765,7 @@
       kompText:"Eine Mischung aus Vertriebsstärke, strategischem Denken und digitalem Verständnis – entwickelt über zwei Jahrzehnte in unterschiedlichen Branchen und Unternehmensgrößen.",
       k1:"Business Development", k2:"Vertrieb & Key Account Management", k3:"Digital Marketing Strategy",
       k4:"Lead Generation", k5:"Pitch- & Ausschreibungsmanagement", k6:"Customer Experience",
-      k7:"Marketing Automation", k8:"Stakeholder Management", k9:"Teamführung", k10:"Marktanalyse",
+      k7:"Marketing Automation", k8:"Stakeholder Management", k9:"Teamführung", k10:"Marktanalyse", k11:"Partnermanagement",
       wgEyebrow:"Werdegang", wgTitle:"Eine Laufbahn mit klarer Linie",
       wgText:"Vom kaufmännischen Einstieg bis zur Business-Development-Verantwortung für mehrstellige Millionenbudgets – jede Station hat Verantwortung und Wirkungsbreite erweitert.",
       t1date:"08/2022 – heute", t1roleSuffix:"Digital Experience",
@@ -696,7 +810,7 @@
       edu3name:"Allgemeine Hochschulreife",
       toolsTitle:"Technologien & Tools", langTitle:"Sprachen",
       langNative:"Muttersprache", langEN:"Englisch", langFluent:"Fließend", langFR:"Französisch", langBasic:"Grundkenntnisse",
-      footerH2pre:"Lassen Sie uns über Ihr ", footerH2brass:"nächstes Projekt", footerH2post:" sprechen.",
+      footerH2pre:"Bereit, den nächsten ", footerH2brass:"Schritt zu machen?", footerH2post:"",
       footerNote:"Interessiert an herausfordernden Projekten"
     },
     en: {
@@ -704,7 +818,12 @@
       heroEyebrow:"Sales · Business Development & Digital Strategy",
       heroRole:"Senior Business Development Manager",
       heroLede:"More than 20 years of experience building new business areas, winning strategic accounts and delivering complex digital projects — from the first idea to the signed contract.",
-      ctaMail:"Send an email", ctaLinkedin:"LinkedIn profile", ctaCV:"Resume (PDF)",
+      ctaMail:"Send an email", ctaLinkedin:"Connect on LinkedIn", ctaCV:"Resume (PDF)",
+      ctaLinkedinConnect:"Connect on LinkedIn",
+      connectH2:'Let\'s <span class="brass">connect.</span>',
+      connectP:"I'm open to interesting conversations — whether about new projects, roles, or simply a professional exchange. The fastest way to reach me is via LinkedIn.",
+      statYears:"Years Experience", statFocus:"Focus", statLang:"Languages",
+      footerSub:"I enjoy interesting conversations — about new roles, projects or professional exchange. The quickest way to reach me is on LinkedIn.",
       targetLine:'Next step: <b>Head of Business Development</b> · <b>Sales Director</b> · <b>Account Director</b> · <b>Senior BD Manager</b> · <b>Managing Director</b> · <b>Head of Marketing</b>',
       pqLabel:"Strengths from my reference letter",
       pq1:"Grasps complex matters quickly and stays on top of challenging situations",
@@ -719,7 +838,7 @@
       kompText:"A blend of sales strength, strategic thinking and digital fluency — built over two decades across industries and company sizes.",
       k1:"Business Development", k2:"Sales & Key Account Management", k3:"Digital Marketing Strategy",
       k4:"Lead Generation", k5:"Pitch & Tender Management", k6:"Customer Experience",
-      k7:"Marketing Automation", k8:"Stakeholder Management", k9:"Team Leadership", k10:"Market Analysis",
+      k7:"Marketing Automation", k8:"Stakeholder Management", k9:"Team Leadership", k10:"Market Analysis", k11:"Partner Management",
       wgEyebrow:"Experience", wgTitle:"A career with a clear trajectory",
       wgText:"From a commercial entry-level role to business development responsibility for multi-million-euro budgets — each step expanded both scope and responsibility.",
       t1date:"08/2022 – present", t1roleSuffix:"Digital Experience",
@@ -764,7 +883,7 @@
       edu3name:"General Higher Education Entrance Qualification",
       toolsTitle:"Technologies & Tools", langTitle:"Languages",
       langNative:"Native", langEN:"English", langFluent:"Fluent", langFR:"French", langBasic:"Basic",
-      footerH2pre:"Let's talk about your ", footerH2brass:"next project", footerH2post:".",
+      footerH2pre:"Ready to take the next ", footerH2brass:"step?", footerH2post:"",
       footerNote:"Interested in challenging projects"
     }
   };
@@ -772,6 +891,7 @@
   const btnDe = document.getElementById('btn-de');
   const btnEn = document.getElementById('btn-en');
   const footerH2 = document.querySelector('footer h2');
+  const connectH2 = document.querySelector('.connect-text h2');
 
   function setLang(lang){
     const dict = translations[lang];
@@ -780,6 +900,7 @@
       if(dict[key] !== undefined){ el.innerHTML = dict[key]; }
     });
     footerH2.innerHTML = dict.footerH2pre + '<span class="brass">' + dict.footerH2brass + '</span>' + dict.footerH2post;
+    if(connectH2) connectH2.innerHTML = dict.connectH2;
     document.documentElement.lang = lang;
     btnDe.classList.toggle('active', lang==='de');
     btnEn.classList.toggle('active', lang==='en');
